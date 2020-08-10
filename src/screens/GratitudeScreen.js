@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { View, Text, StyleSheet } from 'react-native';
+import { View, Text, StyleSheet, TextInput, FlatList, ScrollView } from 'react-native';
 import { Input, Button } from 'react-native-elements';
 import colours from '../../constants/colours.js';
 
@@ -14,13 +14,19 @@ export default function GratitudeScreen() {
   }
 
   return (
-    <View>
-      <Text>What are you grateful for today?</Text>
-      <Input
+    <ScrollView>
+      <Text
+        style={styles.title}>
+        What are you grateful for today?
+      </Text>
+      <TextInput
         multiline={true}
         numberOfLines={4}
         onChangeText = { value => setEntry(value)}
         value={entry}
+        style={{paddingHorizontal: 50, fontSize: 18}}
+        inputContainerStyle={styles.input}
+        placeholder="A good night's sleep? Sunny weather?"
         />
       <View style={styles.buttonContainer}>
         <Button
@@ -31,20 +37,47 @@ export default function GratitudeScreen() {
           onPress={showEntry}
           />
       </View>
+      <ScrollView
+        contentContainerStyle={styles.entryListContainer}>
       {
-        entryList.reverse().map((item, i) => {
+        entryList.map((item, i) => {
           return(
-          <Text key={i}>{item}</Text>
+            <View
+              style={styles.entryContainer}>
+              <Text
+                key={i}
+                >
+                {item}
+              </Text>
+            </View>
         )
         })
       }
-    </View>
+    </ScrollView>
+    </ScrollView>
   )
 }
 
 const styles = StyleSheet.create({
   buttonContainer: {
     width: '100%',
+    alignItems: 'flex-end',
+    paddingHorizontal: 50
+  },
+  title: {
+    color: colours.primaryColour,
+    fontSize: 20,
+    marginVertical: 20,
+    paddingHorizontal: 50
+  },
+  entryListContainer: {
     alignItems: 'center'
+  },
+  entryContainer: {
+    backgroundColor: colours.lightPurple,
+    width: '80%',
+    padding: 20,
+    borderRadius: 5,
+    marginVertical: 10
   }
 })
