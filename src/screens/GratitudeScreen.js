@@ -11,10 +11,11 @@ export default function GratitudeScreen() {
     setEntry(entry);
     setEntryList([...entryList, entry]);
     setEntry('');
+    console.log("hello")
   }
 
   return (
-    <ScrollView>
+    <ScrollView keyboardShouldPersistTaps='handled'>
       <Text
         style={styles.title}>
         What are you grateful for today?
@@ -38,15 +39,15 @@ export default function GratitudeScreen() {
           />
       </View>
       <ScrollView
-        contentContainerStyle={styles.entryListContainer}>
+        contentContainerStyle={styles.entryListContainer}
+        keyboardShouldPersistTaps='handled'>
       {
         entryList.map((item, i) => {
           return(
             <View
-              style={styles.entryContainer}>
-              <Text
-                key={i}
-                >
+              style={styles.entryContainer}
+              key={i}>
+              <Text>
                 {item}
               </Text>
             </View>
