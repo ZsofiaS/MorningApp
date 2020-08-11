@@ -1,8 +1,8 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { View, Text, StyleSheet, TextInput, FlatList, ScrollView } from 'react-native';
 import { Input, Button } from 'react-native-elements';
 import colours from '../../constants/colours.js';
-import { init, insertEntry } from '../../helpers/db';
+import { init, insertEntry, fetchEntries } from '../../helpers/db';
 
 init().then(() => {
   console.log('Initialised database')
@@ -19,9 +19,19 @@ export default function GratitudeScreen() {
     setEntry(entry);
     const dbResult = await insertEntry(entry, Date.now());
     console.log(dbResult);
-    setEntryList([...entryList, entry]);
+    //setEntryList([...entryList, entry]);
     setEntry('');
   }
+
+  const showEntries = async () => {
+    const dbResult = await fetchEntries();
+    console.log(dbResult.rows._array);
+    setEntryList(dbResult.rows._array)
+  }
+
+  useEffect(() => {
+    showEntries();
+  }, []);
 
   return (
     <ScrollView keyboardShouldPersistTaps='handled'>
@@ -57,7 +67,10 @@ export default function GratitudeScreen() {
               style={styles.entryContainer}
               key={i}>
               <Text>
-                {item}
+                {item["date"]}
+              </Text>
+              <Text>
+                {item["entry"]}
               </Text>
             </View>
         )

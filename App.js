@@ -4,7 +4,6 @@ import { StyleSheet, Text, View } from 'react-native';
 import { Button, ThemeProvider } from 'react-native-elements';
 import Navigator from './src/Navigator';
 
-
 export default function App() {
   return (
     <Navigator />
