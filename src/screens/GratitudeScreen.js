@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { View, Text, StyleSheet, TextInput, FlatList, ScrollView } from 'react-native';
 import { Input, Button } from 'react-native-elements';
 import colours from '../../constants/colours.js';
-import { init } from '../../helpers/db';
+import { init, insertEntry } from '../../helpers/db';
 
 init().then(() => {
   console.log('Initialised database')
@@ -15,8 +15,10 @@ export default function GratitudeScreen() {
   const [entry, setEntry] = useState('');
   const [entryList, setEntryList] = useState([]);
 
-  const showEntry = () => {
+  const showEntry = async () => {
     setEntry(entry);
+    const dbResult = await insertEntry(entry, Date.now());
+    console.log(dbResult);
     setEntryList([...entryList, entry]);
     setEntry('');
   }

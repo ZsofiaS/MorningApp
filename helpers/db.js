@@ -18,4 +18,22 @@ export const init = () => {
     });
   });
   return promise;
+};
+
+export const insertEntry = (entry, date) => {
+  const promise = new Promise((resolve, reject) => {
+    db.transaction((tr) => {
+      tr.executeSql(
+        'INSERT INTO entries (entry, date) VALUES (?, ?);',
+        [entry, date],
+        (_, result) => {
+          resolve(result);
+        },
+        (_, err) => {
+          reject(err);
+        }
+      );
+    });
+  });
+  return promise;
 }
