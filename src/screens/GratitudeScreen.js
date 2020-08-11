@@ -15,17 +15,14 @@ export default function GratitudeScreen() {
   const [entry, setEntry] = useState('');
   const [entryList, setEntryList] = useState([]);
 
-  const showEntry = async () => {
+  const saveEntry = async () => {
     setEntry(entry);
     const dbResult = await insertEntry(entry, Date.now());
-    console.log(dbResult);
-    //setEntryList([...entryList, entry]);
     setEntry('');
   }
 
   const showEntries = async () => {
     const dbResult = await fetchEntries();
-    console.log(dbResult.rows._array);
     setEntryList(dbResult.rows._array)
   }
 
@@ -54,7 +51,7 @@ export default function GratitudeScreen() {
           buttonStyle={{ padding: 15}}
           type='clear'
           title='Save journal entry'
-          onPress={showEntry}
+          onPress={saveEntry}
           />
       </View>
       <ScrollView
