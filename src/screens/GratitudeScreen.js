@@ -26,6 +26,12 @@ export default function GratitudeScreen() {
     setEntryList(dbResult.rows._array)
   }
 
+  const convertDate = (date) => {
+    let ISOdate = new Date(date);
+    console.log(ISOdate);
+    return ISOdate.toString();
+  }
+
   useEffect(() => {
     showEntries();
   }, []);
@@ -64,7 +70,7 @@ export default function GratitudeScreen() {
               style={styles.entryContainer}
               key={i}>
               <Text>
-                {item["date"]}
+                {convertDate(item["date"])}
               </Text>
               <Text>
                 {item["entry"]}
