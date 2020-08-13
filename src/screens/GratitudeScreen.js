@@ -3,6 +3,7 @@ import { View, Text, StyleSheet, TextInput, FlatList, ScrollView } from 'react-n
 import { Input, Button } from 'react-native-elements';
 import colours from '../../constants/colours.js';
 import { init, insertEntry, fetchEntries } from '../../helpers/db';
+import Moment from 'react-moment';
 
 init().then(() => {
   console.log('Initialised database')
@@ -23,13 +24,14 @@ export default function GratitudeScreen() {
 
   const showEntries = async () => {
     const dbResult = await fetchEntries();
-    setEntryList(dbResult.rows._array)
+    console.log(dbResult.rows._array);
+    setEntryList(dbResult.rows._array.reverse())
   }
 
   const convertDate = (date) => {
-    let ISOdate = new Date(date);
-    console.log(ISOdate);
-    return ISOdate.toString();
+    return (
+      <Moment element={Text} format='Do MMM YYYY HH:mm'>{date}</Moment>
+      )
   }
 
   useEffect(() => {
@@ -67,14 +69,19 @@ export default function GratitudeScreen() {
         entryList.map((item, i) => {
           return(
             <View
-              style={styles.entryContainer}
-              key={i}>
-              <Text>
+              key={i}
+              style={styles.entryContainer}>
+              <Text
+                style={styles.entryDate}>
                 {convertDate(item["date"])}
               </Text>
-              <Text>
-                {item["entry"]}
-              </Text>
+              <View
+                style={styles.entryContentContainer}>
+                <Text
+                  style={styles.entryContent}>
+                  {item["entry"]}
+                </Text>
+              </View>
             </View>
         )
         })
@@ -97,13 +104,22 @@ const styles = StyleSheet.create({
     paddingHorizontal: 50
   },
   entryListContainer: {
-    alignItems: 'center'
+    alignItems: 'flex-start'
   },
   entryContainer: {
+    width: '100%',
+    padding: 20,
+  },
+  entryContentContainer: {
     backgroundColor: colours.lightPurple,
-    width: '80%',
     padding: 20,
     borderRadius: 5,
     marginVertical: 10
+  },
+  entryContent: {
+    fontSize: 18
+  },
+  entryDate: {
+    paddingLeft: 10
   }
 })
