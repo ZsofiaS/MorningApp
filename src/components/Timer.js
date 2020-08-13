@@ -40,7 +40,7 @@ export default class Timer extends React.Component {
       this.setState({
         on: true,
         button: 'Pause',
-        update: setInterval(this.updateTime, 300)
+        update: setInterval(this.updateTime, 1000)
       })
     }
   }
