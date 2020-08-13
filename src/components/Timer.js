@@ -9,7 +9,8 @@ export default class Timer extends React.Component {
     this.state = {
       mins: 5,
       secs: 0,
-      on: false
+      on: false,
+      button: 'Start'
     }
   }
 
@@ -27,12 +28,44 @@ export default class Timer extends React.Component {
     }
   }
 
+  startStopTimer = () => {
+    if (this.state.on) {
+      this.setState({
+        on: false,
+        button: 'Start'
+      });
+    clearInterval(this.state.update);
+
+    } else {
+      this.setState({
+        on: true,
+        button: 'Pause',
+        update: setInterval(this.updateTime, 300)
+      })
+    }
+  }
+
+  updateTime = () => {
+    if (this.state.secs != 0) {
+      this.setState(prevState => {
+        return {secs: prevState.secs -1 }
+      });
+    } else if (this.state.mins != 0) {
+      this.setState(prevState => {
+        return {
+          secs: 59,
+          mins: prevState.mins -1
+        }
+      })
+    }
+  }
+
   render() {
     return (
       <View>
         <Text
           style={styles.timer}>
-          {this.state.mins}:{this.state.secs}
+          {this.state.mins}:{this.state.secs <= 9 ? `0${this.state.secs}` : this.state.secs}
         </Text>
         <View style={styles.buttonsContainer}>
           <View style={styles.buttonContainer}>
@@ -45,11 +78,11 @@ export default class Timer extends React.Component {
           </View>
           <View style={styles.buttonContainer}>
             <Button
-              title='Start'
+              title={this.state.button}
               titleStyle={{ color: colours.primaryColour, fontSize: 20}}
               buttonStyle={{ padding: 15}}
               type='clear'
-              onPress={console.log("yo")}/>
+              onPress={this.startStopTimer}/>
           </View>
           <View style={styles.buttonContainer}>
             <Button
