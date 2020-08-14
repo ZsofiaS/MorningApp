@@ -1,9 +1,10 @@
 import React, { useState, useEffect } from 'react';
-import { View, Text, StyleSheet, TextInput, FlatList, ScrollView } from 'react-native';
+import { TouchableOpacity, View, Text, StyleSheet, TextInput, FlatList, ScrollView } from 'react-native';
 import { Input, Button } from 'react-native-elements';
 import colours from '../../constants/colours.js';
-import { init, insertEntry, fetchEntries } from '../../helpers/db';
+import { init, insertEntry, fetchEntries, deleteEntry } from '../../helpers/db';
 import Moment from 'react-moment';
+import Icon from 'react-native-vector-icons/FontAwesome';
 
 init().then(() => {
   console.log('Initialised database')
@@ -20,11 +21,11 @@ export default function GratitudeScreen() {
     setEntry(entry);
     const dbResult = await insertEntry(entry, Date.now());
     setEntry('');
+    showEntries();
   }
 
   const showEntries = async () => {
     const dbResult = await fetchEntries();
-    console.log(dbResult.rows._array);
     setEntryList(dbResult.rows._array.reverse())
   }
 
@@ -32,6 +33,11 @@ export default function GratitudeScreen() {
     return (
       <Moment element={Text} format='Do MMM YYYY HH:mm'>{date}</Moment>
       )
+  }
+
+  const removeEntry = async (id) => {
+    const dbResult = await deleteEntry(id);
+    showEntries();
   }
 
   useEffect(() => {
@@ -63,24 +69,37 @@ export default function GratitudeScreen() {
           />
       </View>
       <ScrollView
-        contentContainerStyle={styles.entryListContainer}
-        keyboardShouldPersistTaps='handled'>
+        contentContainerStyle={styles.entryListContainer}>
       {
         entryList.map((item, i) => {
           return(
             <View
               key={i}
-              style={styles.entryContainer}>
-              <Text
-                style={styles.entryDate}>
-                {convertDate(item["date"])}
-              </Text>
+              style={styles.entryContainer}
+              id={i}>
+              <View style={styles.entryTitle}>
+                <Text
+                  style={styles.entryDate}>
+                  {convertDate(item["date"])}
+                </Text>
+                <TouchableOpacity
+                  onPress={() => removeEntry(item["id"])}
+                >
+                    <Icon
+                      name='trash'
+                      type='clear'
+                      size={15}
+                      color={colours.primaryColour}
+                    />
+                </TouchableOpacity>
+              </View>
               <View
                 style={styles.entryContentContainer}>
                 <Text
                   style={styles.entryContent}>
                   {item["entry"]}
                 </Text>
+
               </View>
             </View>
         )
@@ -102,6 +121,10 @@ const styles = StyleSheet.create({
     fontSize: 20,
     marginVertical: 60,
     paddingHorizontal: 50
+  },
+  entryTitle: {
+    flexDirection: 'row',
+    justifyContent: 'space-between'
   },
   entryListContainer: {
     alignItems: 'flex-start'

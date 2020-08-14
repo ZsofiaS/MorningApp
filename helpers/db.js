@@ -55,3 +55,21 @@ export const fetchEntries = () => {
   });
   return promise;
 }
+
+export const deleteEntry = (id) => {
+  const promise = new Promise((resolve, reject) => {
+    db.transaction((tr) => {
+      tr.executeSql(
+        'DELETE FROM entries WHERE id=?;',
+        [id.toString()],
+        (_, result) => {
+          resolve(result);
+        },
+        (_, err) => {
+          reject(err);
+        }
+      );
+    });
+  });
+  return promise;
+}
