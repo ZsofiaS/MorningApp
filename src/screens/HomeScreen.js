@@ -23,31 +23,8 @@ export default function HomeScreen({navigation}) {
             fontSize: 20
           }}
           type='clear'
-          title="Affirmations"
-          onPress={() => navigation.navigate('Affirmations')}/>
-        <Button
-          titleStyle={{
-            color: colours.primaryColour,
-            fontSize: 20
-          }}
-          type='clear'
-          title="Intentions"
-          onPress={() => navigation.navigate('Intentions')}/>
-        <Button
-          titleStyle={{
-            fontSize: 20
-          }}
-          type='clear'
           title="Gratitude"
           onPress={() => navigation.navigate('Gratitude')}/>
-        <Button
-          titleStyle={{
-            color: colours.primaryColour,
-            fontSize: 20
-          }}
-          type='clear'
-          title="Exercise"
-          onPress={() => navigation.navigate('Exercise')}/>
       </ThemeProvider>
       <StatusBar
           style="auto" />

@@ -21,7 +21,7 @@ const styles = StyleSheet.create({
   title: {
     color: colours.primaryColour,
     fontSize: 20,
-    marginVertical: 20,
+    marginVertical: 60,
     paddingHorizontal: 50,
     textAlign: 'center'
   }

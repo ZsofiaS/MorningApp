@@ -2,6 +2,7 @@ import React from 'react';
 import { Text, View, StyleSheet } from 'react-native';
 import { Button } from 'react-native-elements';
 import colours from '../../constants/colours.js';
+import { Audio } from 'expo-av';
 
 export default class Timer extends React.Component {
   constructor(){
@@ -10,7 +11,37 @@ export default class Timer extends React.Component {
       mins: 5,
       secs: 0,
       on: false,
-      button: 'Start'
+      button: 'Start',
+      playbackInstance: null
+    }
+  }
+
+  async componentDidMount() {
+    try {
+      await Audio.setAudioModeAsync({
+        allowsRecordingIOS: false,
+        interruptionModeIOS: Audio.INTERRUPTION_MODE_IOS_DO_NOT_MIX,
+        playsInSilentModeIOS: true,
+        interruptionModeAndroid: Audio.INTERRUPTION_MODE_ANDROID_DUCK_OTHERS,
+        shouldDuckAndroid: true,
+        staysActiveInBackground: true,
+        playThroughEarpieceAndroid: true
+      })
+    } catch(err) {
+      console.log(err)
+    }
+  }
+
+  async loadAudio() {
+    try {
+      const { sound: soundObject, status } = await
+           Audio.Sound.createAsync(
+             { uri: 'https://dl.dropboxusercontent.com/s/8m6fgyybqijxdn0/ding.wav'},
+             { shouldPlay: true });
+        await soundObject.playAsync();
+        }
+    catch (error) {
+      console.log(error);
     }
   }
 
@@ -35,8 +66,8 @@ export default class Timer extends React.Component {
         button: 'Start'
       });
     clearInterval(this.state.update);
-
     } else {
+      this.loadAudio();
       this.setState({
         on: true,
         button: 'Pause',
@@ -57,6 +88,9 @@ export default class Timer extends React.Component {
           mins: prevState.mins -1
         }
       })
+    } else {
+      this.loadAudio();
+      clearInterval(this.state.update);
     }
   }
 
