@@ -3,6 +3,7 @@ import { Text, View, StyleSheet } from 'react-native';
 import { Button } from 'react-native-elements';
 import colours from '../../constants/colours.js';
 import { Audio } from 'expo-av';
+import Icon from 'react-native-vector-icons/FontAwesome';
 
 export default class Timer extends React.Component {
   constructor(){
@@ -11,7 +12,6 @@ export default class Timer extends React.Component {
       mins: 5,
       secs: 0,
       on: false,
-      button: 'Start',
       playbackInstance: null
     }
   }
@@ -62,15 +62,13 @@ export default class Timer extends React.Component {
   startStopTimer = () => {
     if (this.state.on) {
       this.setState({
-        on: false,
-        button: 'Start'
+        on: false
       });
     clearInterval(this.state.update);
     } else {
       this.loadAudio();
       this.setState({
         on: true,
-        button: 'Pause',
         update: setInterval(this.updateTime, 1000)
       })
     }
@@ -94,9 +92,19 @@ export default class Timer extends React.Component {
     }
   }
 
+  resetTimer = () => {
+    clearInterval(this.state.update);
+    this.setState({
+      on: false,
+      mins: 5,
+      secs: 0,
+    })
+  }
+
   render() {
     return (
-      <View>
+      <View
+        style={styles.timerContainer}>
         <Text
           style={styles.timer}>
           {this.state.mins}:{this.state.secs <= 9 ? `0${this.state.secs}` : this.state.secs}
@@ -104,7 +112,13 @@ export default class Timer extends React.Component {
         <View style={styles.buttonsContainer}>
           <View style={styles.buttonContainer}>
             <Button
-              title='-'
+              icon={
+                <Icon
+                  name='minus'
+                  color={colours.primaryColour}
+                  size={30}
+                />
+              }
               titleStyle={{ color: colours.primaryColour, fontSize: 20}}
               buttonStyle={{ padding: 15}}
               type='clear'
@@ -112,7 +126,13 @@ export default class Timer extends React.Component {
           </View>
           <View style={styles.buttonContainer}>
             <Button
-              title={this.state.button}
+              icon={
+                <Icon
+                  name={this.state.on ? 'pause' : 'play'}
+                  color={colours.primaryColour}
+                  size={30}
+                />
+              }
               titleStyle={{ color: colours.primaryColour, fontSize: 20}}
               buttonStyle={{ padding: 15}}
               type='clear'
@@ -120,7 +140,27 @@ export default class Timer extends React.Component {
           </View>
           <View style={styles.buttonContainer}>
             <Button
-              title='+'
+              icon={
+                <Icon
+                  name='refresh'
+                  color={colours.primaryColour}
+                  size={30}
+                />
+              }
+              titleStyle={{ color: colours.primaryColour, fontSize: 20}}
+              buttonStyle={{ padding: 15}}
+              type='clear'
+              onPress={this.resetTimer}/>
+          </View>
+          <View style={styles.buttonContainer}>
+            <Button
+              icon={
+                <Icon
+                  name='plus'
+                  color={colours.primaryColour}
+                  size={30}
+                />
+              }
               titleStyle={{ color: colours.primaryColour, fontSize: 20}}
               buttonStyle={{ padding: 15}}
               type='clear'
@@ -133,19 +173,23 @@ export default class Timer extends React.Component {
 }
 
 const styles = StyleSheet.create({
+  timerContainer: {
+    marginVertical: 30,
+  },
   timer: {
-    marginVertical: 80,
-    fontSize: 100,
+    marginVertical: 120,
+    fontSize: 80,
     textAlign: 'center',
     color: colours.primaryColour
   },
   buttonsContainer: {
     flexDirection: 'row',
     justifyContent: 'center',
-    marginVertical: 10
+    alignItems: 'center',
+    marginVertical: -100
   },
   buttonContainer: {
-    width: '25%',
+    width: '15%',
     marginHorizontal: 10
   },
 })
