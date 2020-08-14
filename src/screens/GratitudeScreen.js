@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { TouchableOpacity, View, Text, StyleSheet, TextInput, FlatList, ScrollView } from 'react-native';
+import { TouchableOpacity, View, Text, StyleSheet, TextInput, FlatList, ScrollView, Image} from 'react-native';
 import { Input, Button } from 'react-native-elements';
 import colours from '../../constants/colours.js';
 import { init, insertEntry, fetchEntries, deleteEntry } from '../../helpers/db';
@@ -52,6 +52,12 @@ export default function GratitudeScreen() {
         style={styles.title}>
         What are you grateful for today?
       </Text>
+      <View style={styles.imageContainer}>
+        <Image
+          style={styles.image}
+          source={require('../../images/lotus.png')}
+        />
+      </View>
       <TextInput
         multiline={true}
         numberOfLines={4}
@@ -60,7 +66,8 @@ export default function GratitudeScreen() {
         style={{paddingHorizontal: 50, fontSize: 18}}
         inputContainerStyle={styles.input}
         placeholder="A good night's sleep? Sunny weather?"
-        />
+      />
+
       <View style={styles.buttonContainer}>
         <Button
           titleStyle={{ color: colours.primaryColour}}
@@ -122,7 +129,17 @@ const styles = StyleSheet.create({
     color: colours.primaryColour,
     fontSize: 20,
     marginVertical: 60,
-    paddingHorizontal: 50
+    paddingHorizontal: 50,
+    textAlign: 'center'
+  },
+  imageContainer: {
+    flex: 1,
+    alignItems: 'center',
+    marginVertical: 15
+  },
+  image: {
+    width: 120,
+    height: 120
   },
   entryTitle: {
     flexDirection: 'row',
