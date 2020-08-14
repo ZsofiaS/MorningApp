@@ -55,7 +55,7 @@ export default function GratitudeScreen() {
       <View style={styles.imageContainer}>
         <Image
           style={styles.image}
-          source={require('../../images/lotus.png')}
+          source={require('../../images/branch.png')}
         />
       </View>
       <TextInput

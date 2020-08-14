@@ -27,7 +27,7 @@ export default function HomeScreen({navigation}) {
         <View style={styles.bContainer}>
           <Image
             style={styles.image}
-            source={require('../../images/lotus.png')}
+            source={require('../../images/branch.png')}
           />
           <Button
             titleStyle={{
@@ -41,7 +41,7 @@ export default function HomeScreen({navigation}) {
         <View style={styles.bContainer}>
           <Image
             style={styles.image}
-            source={require('../../images/stones.png')}
+            source={require('../../images/lotus.png')}
           />
           <Button
             titleStyle={{
