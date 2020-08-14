@@ -1,8 +1,8 @@
 export default {
-  // primaryColour: '#A167A5',
+  // primaryColour: '#9900cc',
   // accentColour: '#F5D7E3'
   primaryColour: '#c48b9f',
   accentColour: '#ffeeff',
-  purple: '#9900cc',
+  purple: '#A167A5',
   lightPurple: '#f3e5f5'
 }

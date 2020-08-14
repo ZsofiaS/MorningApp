@@ -45,7 +45,9 @@ export default function GratitudeScreen() {
   }, []);
 
   return (
-    <ScrollView keyboardShouldPersistTaps='handled'>
+    <ScrollView
+      keyboardShouldPersistTaps='handled'
+      style={styles.container}>
       <Text
         style={styles.title}>
         What are you grateful for today?
