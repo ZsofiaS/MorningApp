@@ -25,7 +25,7 @@ export default class Timer extends React.Component {
         interruptionModeAndroid: Audio.INTERRUPTION_MODE_ANDROID_DUCK_OTHERS,
         shouldDuckAndroid: true,
         staysActiveInBackground: true,
-        playThroughEarpieceAndroid: true
+        playThroughEarpieceAndroid: false
       })
     } catch(err) {
       console.log(err)
