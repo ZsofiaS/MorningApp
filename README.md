@@ -7,6 +7,9 @@ Take a minute to pause and reflect, stay positive and get moving!
 * SQLite
 
 ### Features
+* Gratitude Journal
+* Meditation/ break timer
+* Daily affirmation 
 
 ### How to use:
 
