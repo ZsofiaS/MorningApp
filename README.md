@@ -1,6 +1,6 @@
 # Morning App
 A morning ritual app to help taking back your mornings by developing good habits.  
-Take a minute to pause and reflect, stay positive and get moving!  
+Take a minute to pause and reflect & stay positive 🌺
 
 ### Screens
 ![home](./images/screenA.png)![timer](./images/screenB.png)![journal](./images/screenC.png)![affirmation](./images/screenD.png)
@@ -28,3 +28,12 @@ expo start
 * Install the Expo client app on your iOS or Android phone, connect to the same wireless network as your computer
 * On Android, use the Expo app to scan the QR code from the terminal to open the project.
 * On iOS, follow on-screen instructions to get a link.
+
+### Options to extend the app:
+
+* add new features: set your intentions, exercise
+* add backend to use additional APIs
+* add image upload feature to gratitude journal
+
+### Credits
+affirmations.dev API
