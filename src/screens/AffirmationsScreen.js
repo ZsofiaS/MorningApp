@@ -40,7 +40,7 @@ const styles = StyleSheet.create({
   content: {
     color: colours.primaryColour,
     fontSize: 25,
-    marginVertical: 140,
+    marginVertical: 120,
     paddingHorizontal: 50,
     textAlign: 'center',
     lineHeight: 40
@@ -48,7 +48,7 @@ const styles = StyleSheet.create({
   imageContainer: {
     flex: 1,
     alignItems: 'center',
-    marginVertical: 10
+    marginVertical: 0
   },
   image: {
     width: 120,

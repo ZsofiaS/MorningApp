@@ -14,7 +14,7 @@ const Navigator = createStackNavigator(
     Home: {
       screen: HomeScreen,
       navigationOptions: {
-        headerTitle: 'Home'
+        headerTitle: 'Morning Ritual'
       }
     },
     Breath: {

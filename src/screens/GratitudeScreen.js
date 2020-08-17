@@ -98,7 +98,7 @@ export default function GratitudeScreen() {
                       name='trash'
                       type='clear'
                       size={15}
-                      color={colours.primaryColour}
+                      color={colours.beige}
                     />
                 </TouchableOpacity>
               </View>
@@ -153,7 +153,7 @@ const styles = StyleSheet.create({
     padding: 20,
   },
   entryContentContainer: {
-    backgroundColor: colours.lightPurple,
+    backgroundColor: colours.beige,
     padding: 20,
     borderRadius: 5,
     marginVertical: 10

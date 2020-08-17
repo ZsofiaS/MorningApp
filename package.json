@@ -8,10 +8,15 @@
     "test": "jest"
   },
   "dependencies": {
+    "@expo-google-fonts/baloo-bhai-2": "^0.1.0",
+    "@expo-google-fonts/dev": "^0.1.0",
+    "@expo-google-fonts/inter": "^0.1.0",
+    "@expo-google-fonts/oranienbaum": "^0.1.0",
     "@react-native-community/masked-view": "^0.1.10",
     "css-tree": "^1.0.0-alpha.39",
     "expo": "~38.0.9",
     "expo-av": "^8.4.0",
+    "expo-font": "~8.2.1",
     "expo-splash-screen": "^0.5.0",
     "expo-sqlite": "~8.2.1",
     "expo-status-bar": "^1.0.0",
@@ -23,6 +28,7 @@
     "react-native": "~0.62.2",
     "react-native-elements": "^2.2.0",
     "react-native-gesture-handler": "~1.6.1",
+    "react-native-global-props": "^1.1.5",
     "react-native-reanimated": "~1.9.0",
     "react-native-safe-area-context": "^3.1.4",
     "react-native-screens": "~2.9.0",
@@ -36,6 +42,7 @@
   "devDependencies": {
     "@babel/core": "~7.9.0",
     "babel-jest": "~25.2.6",
+    "eslint": "^7.7.0",
     "jest": "~25.2.6",
     "react-test-renderer": "~16.11.0"
   },
