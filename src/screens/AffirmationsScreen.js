@@ -8,7 +8,7 @@ export default class AffirmationsScreen extends React.Component {
     super();
     this.state = {
       affirmation: null
-    }
+    };
   }
 
   componentDidMount = () => {
@@ -19,7 +19,7 @@ export default class AffirmationsScreen extends React.Component {
           affirmation: responseJson["affirmation"]
         })
       })
-  };
+  }
 
   render() {
     return (

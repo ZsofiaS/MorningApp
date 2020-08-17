@@ -5,6 +5,7 @@ import colours from '../../constants/colours.js';
 import { Audio } from 'expo-av';
 import Icon from 'react-native-vector-icons/FontAwesome';
 
+
 export default class Timer extends React.Component {
   constructor(){
     super();
@@ -13,7 +14,7 @@ export default class Timer extends React.Component {
       secs: 0,
       on: false,
       playbackInstance: null
-    }
+    };
   }
 
   async componentDidMount() {
@@ -26,9 +27,9 @@ export default class Timer extends React.Component {
         shouldDuckAndroid: true,
         staysActiveInBackground: true,
         playThroughEarpieceAndroid: false
-      })
+      });
     } catch(err) {
-      console.log(err)
+      console.log(err);
     }
   }
 
@@ -54,8 +55,8 @@ export default class Timer extends React.Component {
   decrementMins = () => {
     if (this.state.mins > 1) {
       this.setState(prevState => {
-        return {mins: prevState.mins - 1}
-      })
+        return {mins: prevState.mins - 1};
+      });
     }
   }
 
@@ -70,27 +71,27 @@ export default class Timer extends React.Component {
       this.setState({
         on: true,
         update: setInterval(this.updateTime, 1000)
-      })
+      });
     }
-  }
+  };
 
   updateTime = () => {
     if (this.state.secs != 0) {
       this.setState(prevState => {
-        return {secs: prevState.secs -1 }
+        return {secs: prevState.secs -1 };
       });
     } else if (this.state.mins != 0) {
       this.setState(prevState => {
         return {
           secs: 59,
           mins: prevState.mins -1
-        }
-      })
+        };
+      });
     } else {
       this.loadAudio();
       clearInterval(this.state.update);
     }
-  }
+  };
 
   resetTimer = () => {
     clearInterval(this.state.update);
@@ -98,8 +99,8 @@ export default class Timer extends React.Component {
       on: false,
       mins: 5,
       secs: 0,
-    })
-  }
+    });
+  };
 
   render() {
     return (

@@ -7,7 +7,7 @@ import Moment from 'react-moment';
 import Icon from 'react-native-vector-icons/FontAwesome';
 
 init().then(() => {
-  console.log('Initialised database')
+  console.log('Initialised database');
 }).catch(err => {
   console.log('Initialising database failed');
   console.log(err);
@@ -22,12 +22,12 @@ export default function GratitudeScreen() {
     const dbResult = await insertEntry(entry, Date.now());
     setEntry('');
     showEntries();
-  }
+  };
 
   const showEntries = async () => {
     const dbResult = await fetchEntries();
-    setEntryList(dbResult.rows._array.reverse())
-  }
+    setEntryList(dbResult.rows._array.reverse());
+  };
 
   const convertDate = (date) => {
     return (
