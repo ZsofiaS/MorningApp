@@ -1,0 +1,17 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`exercisescreen renders correctly 1`] = `
+<View>
+  <Text>
+    Great weather today for a run
+  </Text>
+</View>
+`;
+
+exports[`homescreen renders correctly 1`] = `
+<View>
+  <Text>
+    Great weather today for a run
+  </Text>
+</View>
+`;

@@ -46,10 +46,14 @@
     "eslint-config-google": "^0.14.0",
     "eslint-plugin-react": "^7.20.6",
     "jest": "~25.2.6",
-    "react-test-renderer": "~16.11.0"
+    "jest-expo": "^37.0.0",
+    "react-test-renderer": "^16.11.0"
   },
   "jest": {
-    "preset": "react-native"
+    "preset": "jest-expo",
+    "transformIgnorePatterns": [
+      "node_modules/(?!(jest-)?react-native|react-clone-referenced-element|@react-native-community|expo(nent)?|@expo(nent)?/.*|react-navigation|@react-navigation/.*|@unimodules/.*|unimodules|sentry-expo|native-base|@sentry/.*)"
+    ]
   },
   "private": true
 }

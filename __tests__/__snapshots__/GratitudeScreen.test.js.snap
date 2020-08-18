@@ -1,0 +1,275 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`gratitudescreen renders correctly 1`] = `
+<RCTScrollView
+  keyboardShouldPersistTaps="handled"
+>
+  <View>
+    <Text
+      style={
+        Object {
+          "color": "#c48b9f",
+          "fontSize": 20,
+          "marginVertical": 60,
+          "paddingHorizontal": 50,
+          "textAlign": "center",
+        }
+      }
+    >
+      What are you grateful for today?
+    </Text>
+    <View
+      style={
+        Object {
+          "alignItems": "center",
+          "flex": 1,
+          "marginVertical": 15,
+        }
+      }
+    >
+      <Image
+        source={1}
+        style={
+          Object {
+            "height": 120,
+            "width": 120,
+          }
+        }
+      />
+    </View>
+    <TextInput
+      allowFontScaling={true}
+      multiline={true}
+      numberOfLines={4}
+      onChangeText={[Function]}
+      placeholder="A good night's sleep? Sunny weather?"
+      rejectResponderTermination={true}
+      style={
+        Object {
+          "fontSize": 18,
+          "paddingHorizontal": 50,
+        }
+      }
+      underlineColorAndroid="transparent"
+      value=""
+    />
+    <View
+      style={
+        Object {
+          "alignItems": "flex-end",
+          "paddingHorizontal": 50,
+          "width": "100%",
+        }
+      }
+    >
+      <View
+        style={
+          Object {
+            "borderRadius": 3,
+            "overflow": "hidden",
+          }
+        }
+      >
+        <View
+          accessibilityRole="button"
+          accessibilityState={
+            Object {
+              "busy": false,
+              "disabled": false,
+            }
+          }
+          accessible={true}
+          focusable={true}
+          onClick={[Function]}
+          onResponderGrant={[Function]}
+          onResponderMove={[Function]}
+          onResponderRelease={[Function]}
+          onResponderTerminate={[Function]}
+          onResponderTerminationRequest={[Function]}
+          onStartShouldSetResponder={[Function]}
+          style={
+            Object {
+              "opacity": 1,
+            }
+          }
+        >
+          <View
+            style={
+              Object {
+                "alignItems": "center",
+                "backgroundColor": "transparent",
+                "borderColor": "#2089dc",
+                "borderRadius": 3,
+                "borderWidth": 0,
+                "flexDirection": "row",
+                "justifyContent": "center",
+                "padding": 15,
+              }
+            }
+          >
+            <Text
+              style={
+                Object {
+                  "color": "#c48b9f",
+                  "fontSize": 18,
+                  "paddingBottom": 1,
+                  "paddingTop": 2,
+                  "textAlign": "center",
+                }
+              }
+            >
+              Save journal entry
+            </Text>
+          </View>
+        </View>
+      </View>
+    </View>
+    <RCTScrollView
+      contentContainerStyle={
+        Object {
+          "alignItems": "flex-start",
+        }
+      }
+    >
+      <View />
+    </RCTScrollView>
+  </View>
+</RCTScrollView>
+`;
+
+exports[`homescreen renders correctly 1`] = `
+<RCTScrollView
+  keyboardShouldPersistTaps="handled"
+>
+  <View>
+    <Text
+      style={
+        Object {
+          "color": "#c48b9f",
+          "fontSize": 20,
+          "marginVertical": 60,
+          "paddingHorizontal": 50,
+          "textAlign": "center",
+        }
+      }
+    >
+      What are you grateful for today?
+    </Text>
+    <View
+      style={
+        Object {
+          "alignItems": "center",
+          "flex": 1,
+          "marginVertical": 15,
+        }
+      }
+    >
+      <Image
+        source={1}
+        style={
+          Object {
+            "height": 120,
+            "width": 120,
+          }
+        }
+      />
+    </View>
+    <TextInput
+      allowFontScaling={true}
+      multiline={true}
+      numberOfLines={4}
+      onChangeText={[Function]}
+      placeholder="A good night's sleep? Sunny weather?"
+      rejectResponderTermination={true}
+      style={
+        Object {
+          "fontSize": 18,
+          "paddingHorizontal": 50,
+        }
+      }
+      underlineColorAndroid="transparent"
+      value=""
+    />
+    <View
+      style={
+        Object {
+          "alignItems": "flex-end",
+          "paddingHorizontal": 50,
+          "width": "100%",
+        }
+      }
+    >
+      <View
+        style={
+          Object {
+            "borderRadius": 3,
+            "overflow": "hidden",
+          }
+        }
+      >
+        <View
+          accessibilityRole="button"
+          accessibilityState={
+            Object {
+              "busy": false,
+              "disabled": false,
+            }
+          }
+          accessible={true}
+          focusable={true}
+          onClick={[Function]}
+          onResponderGrant={[Function]}
+          onResponderMove={[Function]}
+          onResponderRelease={[Function]}
+          onResponderTerminate={[Function]}
+          onResponderTerminationRequest={[Function]}
+          onStartShouldSetResponder={[Function]}
+          style={
+            Object {
+              "opacity": 1,
+            }
+          }
+        >
+          <View
+            style={
+              Object {
+                "alignItems": "center",
+                "backgroundColor": "transparent",
+                "borderColor": "#2089dc",
+                "borderRadius": 3,
+                "borderWidth": 0,
+                "flexDirection": "row",
+                "justifyContent": "center",
+                "padding": 15,
+              }
+            }
+          >
+            <Text
+              style={
+                Object {
+                  "color": "#c48b9f",
+                  "fontSize": 18,
+                  "paddingBottom": 1,
+                  "paddingTop": 2,
+                  "textAlign": "center",
+                }
+              }
+            >
+              Save journal entry
+            </Text>
+          </View>
+        </View>
+      </View>
+    </View>
+    <RCTScrollView
+      contentContainerStyle={
+        Object {
+          "alignItems": "flex-start",
+        }
+      }
+    >
+      <View />
+    </RCTScrollView>
+  </View>
+</RCTScrollView>
+`;

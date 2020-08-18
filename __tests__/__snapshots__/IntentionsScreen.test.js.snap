@@ -1,0 +1,17 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`homescreen renders correctly 1`] = `
+<View>
+  <Text>
+     Set your intentions for today
+  </Text>
+</View>
+`;
+
+exports[`intentionsscreen renders correctly 1`] = `
+<View>
+  <Text>
+     Set your intentions for today
+  </Text>
+</View>
+`;

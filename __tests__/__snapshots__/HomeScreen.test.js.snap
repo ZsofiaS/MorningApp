@@ -1,0 +1,280 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`homescreen renders correctly 1`] = `
+<View
+  style={
+    Object {
+      "alignItems": "center",
+      "flex": 1,
+      "justifyContent": "flex-start",
+    }
+  }
+>
+  <Text
+    style={
+      Object {
+        "color": "#A167A5",
+        "fontSize": 25,
+        "marginVertical": 100,
+        "paddingHorizontal": 50,
+      }
+    }
+  >
+    Have a great morning!
+  </Text>
+  <View
+    style={
+      Object {
+        "marginVertical": -15,
+      }
+    }
+  >
+    <View
+      style={
+        Object {
+          "alignItems": "center",
+          "flexDirection": "row",
+          "marginVertical": 10,
+        }
+      }
+    >
+      <Image
+        source={1}
+        style={
+          Object {
+            "height": 60,
+            "marginHorizontal": 10,
+            "marginVertical": 10,
+            "width": 60,
+          }
+        }
+      />
+      <View
+        style={
+          Object {
+            "borderRadius": 3,
+            "overflow": "hidden",
+          }
+        }
+      >
+        <View
+          accessibilityRole="button"
+          accessibilityState={
+            Object {
+              "busy": false,
+              "disabled": false,
+            }
+          }
+          accessible={true}
+          focusable={true}
+          onClick={[Function]}
+          onResponderGrant={[Function]}
+          onResponderMove={[Function]}
+          onResponderRelease={[Function]}
+          onResponderTerminate={[Function]}
+          onResponderTerminationRequest={[Function]}
+          onStartShouldSetResponder={[Function]}
+          style={
+            Object {
+              "opacity": 1,
+            }
+          }
+        >
+          <View
+            style={
+              Object {
+                "alignItems": "center",
+                "backgroundColor": "transparent",
+                "borderColor": "#2089dc",
+                "borderRadius": 3,
+                "borderWidth": 0,
+                "flexDirection": "row",
+                "justifyContent": "center",
+                "padding": 8,
+              }
+            }
+          >
+            <Text
+              style={
+                Object {
+                  "color": "#c48b9f",
+                  "fontSize": 20,
+                  "paddingBottom": 1,
+                  "paddingTop": 2,
+                  "textAlign": "center",
+                }
+              }
+            >
+              Take a break and breath
+            </Text>
+          </View>
+        </View>
+      </View>
+    </View>
+    <View
+      style={
+        Object {
+          "alignItems": "center",
+          "flexDirection": "row",
+          "marginVertical": 10,
+        }
+      }
+    >
+      <Image
+        source={1}
+        style={
+          Object {
+            "height": 60,
+            "marginHorizontal": 10,
+            "marginVertical": 10,
+            "width": 60,
+          }
+        }
+      />
+      <View
+        style={
+          Object {
+            "borderRadius": 3,
+            "overflow": "hidden",
+          }
+        }
+      >
+        <View
+          accessibilityRole="button"
+          accessibilityState={
+            Object {
+              "busy": false,
+              "disabled": false,
+            }
+          }
+          accessible={true}
+          focusable={true}
+          onClick={[Function]}
+          onResponderGrant={[Function]}
+          onResponderMove={[Function]}
+          onResponderRelease={[Function]}
+          onResponderTerminate={[Function]}
+          onResponderTerminationRequest={[Function]}
+          onStartShouldSetResponder={[Function]}
+          style={
+            Object {
+              "opacity": 1,
+            }
+          }
+        >
+          <View
+            style={
+              Object {
+                "alignItems": "center",
+                "backgroundColor": "transparent",
+                "borderColor": "#2089dc",
+                "borderRadius": 3,
+                "borderWidth": 0,
+                "flexDirection": "row",
+                "justifyContent": "center",
+                "padding": 8,
+              }
+            }
+          >
+            <Text
+              style={
+                Object {
+                  "color": "#c48b9f",
+                  "fontSize": 20,
+                  "paddingBottom": 1,
+                  "paddingTop": 2,
+                  "textAlign": "center",
+                }
+              }
+            >
+              Gratitude
+            </Text>
+          </View>
+        </View>
+      </View>
+    </View>
+    <View
+      style={
+        Object {
+          "alignItems": "center",
+          "flexDirection": "row",
+          "marginVertical": 10,
+        }
+      }
+    >
+      <Image
+        source={1}
+        style={
+          Object {
+            "height": 60,
+            "marginHorizontal": 10,
+            "marginVertical": 10,
+            "width": 60,
+          }
+        }
+      />
+      <View
+        style={
+          Object {
+            "borderRadius": 3,
+            "overflow": "hidden",
+          }
+        }
+      >
+        <View
+          accessibilityRole="button"
+          accessibilityState={
+            Object {
+              "busy": false,
+              "disabled": false,
+            }
+          }
+          accessible={true}
+          focusable={true}
+          onClick={[Function]}
+          onResponderGrant={[Function]}
+          onResponderMove={[Function]}
+          onResponderRelease={[Function]}
+          onResponderTerminate={[Function]}
+          onResponderTerminationRequest={[Function]}
+          onStartShouldSetResponder={[Function]}
+          style={
+            Object {
+              "opacity": 1,
+            }
+          }
+        >
+          <View
+            style={
+              Object {
+                "alignItems": "center",
+                "backgroundColor": "transparent",
+                "borderColor": "#2089dc",
+                "borderRadius": 3,
+                "borderWidth": 0,
+                "flexDirection": "row",
+                "justifyContent": "center",
+                "padding": 8,
+              }
+            }
+          >
+            <Text
+              style={
+                Object {
+                  "color": "#c48b9f",
+                  "fontSize": 20,
+                  "paddingBottom": 1,
+                  "paddingTop": 2,
+                  "textAlign": "center",
+                }
+              }
+            >
+              Daily affirmation
+            </Text>
+          </View>
+        </View>
+      </View>
+    </View>
+  </View>
+</View>
+`;
