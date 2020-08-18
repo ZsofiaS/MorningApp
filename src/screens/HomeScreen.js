@@ -16,6 +16,7 @@ export default function HomeScreen({navigation}) {
               source={require('../../images/lotus-position-2.png')}
             />
             <Button
+              testID={'breathButton'}
               titleStyle={{
                   color: colours.primaryColour,
                   fontSize: 20
