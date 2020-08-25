@@ -5,6 +5,7 @@ import colours from '../../constants/colours.js';
 import { init, insertEntry, fetchEntries, deleteEntry } from '../../helpers/db';
 import Moment from 'react-moment';
 import Icon from 'react-native-vector-icons/FontAwesome';
+import JournalEntry from '../components/JournalEntry';
 
 init().then(() => {
   console.log('Initialised database');
@@ -36,15 +37,18 @@ export default function GratitudeScreen() {
   }
 
   const removeEntry = async (id) => {
+    console.log('delete?')
     const dbResult = await deleteEntry(id);
     showEntries();
   }
 
   useEffect(() => {
+
     showEntries();
   }, []);
 
   return (
+
     <ScrollView
       keyboardShouldPersistTaps='handled'
       style={styles.container}>
@@ -82,36 +86,15 @@ export default function GratitudeScreen() {
       {
         entryList.map((item, i) => {
           return(
-            <View
+            <JournalEntry
               key={i}
-              style={styles.entryContainer}
-              id={i}>
-              <View style={styles.entryTitle}>
-                <Text
-                  style={styles.entryDate}>
-                  {convertDate(item["date"])}
-                </Text>
-                <TouchableOpacity
-                  onPress={() => removeEntry(item["id"])}
-                >
-                    <Icon
-                      name='trash'
-                      type='clear'
-                      size={15}
-                      color={colours.beige}
-                    />
-                </TouchableOpacity>
-              </View>
-              <View
-                style={styles.entryContentContainer}>
-                <Text
-                  style={styles.entryContent}>
-                  {item["entry"]}
-                </Text>
-
-              </View>
-            </View>
-        )
+              i={i}
+              date={item["date"]}
+              id={item["id"]}
+              entry={item["entry"]}
+              removeEntry={() => removeEntry(item["id"])}
+            />
+          )
         })
       }
       </ScrollView>
