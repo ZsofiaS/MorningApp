@@ -4,55 +4,28 @@ import { Button, ThemeProvider } from 'react-native-elements';
 import { StatusBar } from 'expo-status-bar';
 import { withNavigation } from 'react-navigation';
 import colours from '../../constants/colours.js';
+import OptionCard from '../components/OptionCard';
 
 export default function HomeScreen({navigation}) {
   return (
       <View style={styles.container}>
         <Text style={styles.title}>Have a great morning!</Text>
         <View style={styles.listContainer}>
-          <View style={styles.bContainer}>
-            <Image
-              style={styles.image}
-              source={require('../../images/lotus-position-2.png')}
-            />
-            <Button
-              testID={'breathButton'}
-              titleStyle={{
-                  color: colours.primaryColour,
-                  fontSize: 20
-                }}
-              type='clear'
-              title="Take a break and breath"
-              onPress={() => navigation.navigate('Breath')}/>
-          </View>
-          <View style={styles.bContainer}>
-            <Image
-              style={styles.image}
-              source={require('../../images/branch.png')}
-            />
-            <Button
-              titleStyle={{
-                color: colours.primaryColour,
-                fontSize: 20
-              }}
-              type='clear'
-              title="Gratitude"
-              onPress={() => navigation.navigate('Gratitude')}/>
-          </View>
-          <View style={styles.bContainer}>
-            <Image
-              style={styles.image}
-              source={require('../../images/lotus.png')}
-            />
-            <Button
-              titleStyle={{
-                color: colours.primaryColour,
-                fontSize: 20
-              }}
-              type='clear'
-              title="Daily affirmation"
-              onPress={() => navigation.navigate('Affirmations')}/>
-            </View>
+          <OptionCard
+            source={require('../../images/lotus-position-2.png')}
+            onPress={() => navigation.navigate('Breath')}
+            title="Take a break and breath"
+          />
+          <OptionCard
+            source={require('../../images/branch.png')}
+            onPress={() => navigation.navigate('Gratitude')}
+            title="Gratitude Journal"
+          />
+          <OptionCard
+            source={require('../../images/lotus.png')}
+            onPress={() => navigation.navigate('Affirmations')}
+            title="Daily affirmation"
+          />
         </View>
         <StatusBar
             style="auto" />
