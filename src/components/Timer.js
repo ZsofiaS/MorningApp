@@ -1,10 +1,9 @@
 import React from 'react';
 import { Text, View, StyleSheet } from 'react-native';
 import { Button } from 'react-native-elements';
-import colours from '../../constants/colours.js';
 import { Audio } from 'expo-av';
 import Icon from 'react-native-vector-icons/FontAwesome';
-
+import colours from '../../constants/colours.js';
 
 export default class Timer extends React.Component {
   constructor(){

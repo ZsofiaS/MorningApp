@@ -2,7 +2,6 @@ import React, { useEffect } from 'react';
 import { View, Text, StyleSheet, Image } from 'react-native';
 import colours from '../../constants/colours.js';
 
-
 export default class AffirmationsScreen extends React.Component {
   constructor() {
     super();

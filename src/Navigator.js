@@ -26,7 +26,7 @@ const Navigator = createStackNavigator(
     Affirmations: {
       screen: AffirmationsScreen,
       navigationOptions: {
-        headerTitle: 'Affirmations'
+        headerTitle: 'Daily affirmation'
       }
     },
     Exercise: {
@@ -38,7 +38,7 @@ const Navigator = createStackNavigator(
     Gratitude: {
       screen: GratitudeScreen,
       navigationOptions: {
-        headerTitle: 'Gratitude'
+        headerTitle: 'Gratitude Journal'
       }
     },
     Intentions: {

@@ -114,7 +114,7 @@ export default function GratitudeScreen() {
         )
         })
       }
-    </ScrollView>
+      </ScrollView>
     </ScrollView>
   )
 }

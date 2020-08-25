@@ -7,6 +7,7 @@ Take a minute to pause and reflect & stay positive 🌺
 
 ### Tech stack
 * React Native
+* React Native Elements
 * SQLite
 
 ### Features
@@ -31,7 +32,7 @@ expo start
 
 ### Options to extend the app:
 
-* add new features: set your intentions, exercise
+* add new features: set your intentions, exercise, play relaxing audio
 * add backend to use additional APIs
 * add image upload feature to gratitude journal
 
