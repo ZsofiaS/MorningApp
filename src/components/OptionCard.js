@@ -1,10 +1,9 @@
 import React from 'react';
 import { View, Image, StyleSheet } from 'react-native';
-import {Button} from 'react-native-elements';
-import { withNavigation } from 'react-navigation';
+import { Button } from 'react-native-elements';
 import colours from '../../constants/colours.js';
 
-export default function OptionCard({navigation, source, onPress, title}) {
+export default function OptionCard({source, onPress, title}) {
   return(
     <View style={styles.bContainer}>
       <Image
@@ -20,7 +19,7 @@ export default function OptionCard({navigation, source, onPress, title}) {
         title={title}
         onPress={onPress}/>
     </View>
-  )
+  );
 }
 
 const styles = StyleSheet.create({
@@ -35,4 +34,4 @@ const styles = StyleSheet.create({
     width: 60,
     height: 60,
   }
-})
+});

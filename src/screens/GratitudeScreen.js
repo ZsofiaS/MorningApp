@@ -1,10 +1,9 @@
 import React, { useState, useEffect } from 'react';
-import { TouchableOpacity, View, Text, StyleSheet, TextInput, FlatList, ScrollView, Image} from 'react-native';
-import { Input, Button } from 'react-native-elements';
+import { View, Text, StyleSheet, TextInput, ScrollView, Image} from 'react-native';
+import { Button } from 'react-native-elements';
 import colours from '../../constants/colours.js';
 import { init, insertEntry, fetchEntries, deleteEntry } from '../../helpers/db';
 import Moment from 'react-moment';
-import Icon from 'react-native-vector-icons/FontAwesome';
 import JournalEntry from '../components/JournalEntry';
 
 init().then(() => {
@@ -33,14 +32,13 @@ export default function GratitudeScreen() {
   const convertDate = (date) => {
     return (
       <Moment element={Text} format='Do MMM YYYY HH:mm'>{date}</Moment>
-      )
-  }
+    );
+  };
 
   const removeEntry = async (id) => {
-    console.log('delete?')
     const dbResult = await deleteEntry(id);
     showEntries();
-  }
+  };
 
   useEffect(() => {
 
@@ -94,12 +92,12 @@ export default function GratitudeScreen() {
               entry={item["entry"]}
               removeEntry={() => removeEntry(item["id"])}
             />
-          )
+          );
         })
       }
       </ScrollView>
     </ScrollView>
-  )
+  );
 }
 
 const styles = StyleSheet.create({
@@ -147,4 +145,4 @@ const styles = StyleSheet.create({
   entryDate: {
     paddingLeft: 10
   }
-})
+});

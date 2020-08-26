@@ -18,7 +18,7 @@ export default function BreathScreen() {
       </View>
       <Timer />
     </View>
-  )
+  );
 }
 
 const styles = StyleSheet.create({
@@ -38,4 +38,4 @@ const styles = StyleSheet.create({
     width: 120,
     height: 120
   }
-})
+});

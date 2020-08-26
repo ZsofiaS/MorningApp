@@ -1,5 +1,5 @@
-import * as React from "react"
-import Svg, { Path, G } from "react-native-svg"
+import * as React from "react";
+import Svg, { Path, G } from "react-native-svg";
 
 function Lotus(props) {
   return (
@@ -32,7 +32,7 @@ function Lotus(props) {
         <Path d="M249 278.7l-.2.2h.3s0-.1-.1-.2zM69.1 207.3c-.1 98.8 80.1 179 179 179l.1.1c0-98.9-80.2-179.1-179.1-179.1zM140.5 387.3c.1 0 .1.1.2.1v-.3c0 .1-.1.2-.2.2zM247.4 278.7l.2.2h-.3c.1 0 .1-.1.1-.2zM427.4 207.3c.1 98.8-80.1 179-179 179l-.1.1c0-98.9 80.2-179.1 179.1-179.1zM355.9 387.3c-.1 0-.1.1-.2.1v-.3l.2.2z" />
       </G>
     </Svg>
-  )
+  );
 }
 
-export default Lotus
+export default Lotus;

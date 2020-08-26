@@ -9,8 +9,8 @@ export default function JournalEntry(props) {
   const convertDate = (date) => {
     return (
       <Moment element={Text} format='Do MMM YYYY HH:mm'>{date}</Moment>
-      )
-  }
+    );
+  };
 
   return(
     <View
@@ -41,7 +41,7 @@ export default function JournalEntry(props) {
         </Text>
       </View>
     </View>
-  )
+  );
 }
 
 const styles = StyleSheet.create({
@@ -89,4 +89,4 @@ const styles = StyleSheet.create({
   entryDate: {
     paddingLeft: 10
   }
-})
+});

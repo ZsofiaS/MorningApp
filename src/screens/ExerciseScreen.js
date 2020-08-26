@@ -6,5 +6,5 @@ export default function ExerciseScreen() {
     <View>
       <Text>Great weather today for a run</Text>
     </View>
-  )
+  );
 }

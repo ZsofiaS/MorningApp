@@ -1,6 +1,5 @@
 import React from 'react';
-import { StyleSheet, Text, View, Image} from 'react-native';
-import { Button, ThemeProvider } from 'react-native-elements';
+import { StyleSheet, Text, View } from 'react-native';
 import { StatusBar } from 'expo-status-bar';
 import { withNavigation } from 'react-navigation';
 import colours from '../../constants/colours.js';
@@ -30,7 +29,7 @@ export default function HomeScreen({navigation}) {
         <StatusBar
             style="auto" />
       </View>
-    )
+    );
 }
 
 const styles = StyleSheet.create({

@@ -10,8 +10,7 @@
     },
     "extends": [
         "eslint:recommended",
-        "plugin:react/recommended",
-        "google"
+        "plugin:react/recommended"
     ],
     "parserOptions": {
         "ecmaFeatures": {
@@ -25,7 +24,6 @@
         "react"
     ],
     "rules": {
-        "semi": "error"
+        "semi": 2
     }
-    "esversion": 6
 }

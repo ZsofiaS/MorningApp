@@ -6,5 +6,5 @@ export default function IntentionsScreen() {
     <View>
       <Text> Set your intentions for today</Text>
     </View>
-  )
+  );
 }
