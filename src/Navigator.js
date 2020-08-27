@@ -7,6 +7,7 @@ import AffirmationsScreen from './screens/AffirmationsScreen';
 import ExerciseScreen from './screens/ExerciseScreen';
 import GratitudeScreen from './screens/GratitudeScreen';
 import IntentionsScreen from './screens/IntentionsScreen';
+import SoundsScreen from './screens/SoundsScreen';
 import colours from '../constants/colours.js';
 
 const Navigator = createStackNavigator(
@@ -45,6 +46,12 @@ const Navigator = createStackNavigator(
         screen: IntentionsScreen,
         navigationOptions: {
           headerTitle: 'Intentions'
+        }
+      },
+      Sounds: {
+        screen: SoundsScreen,
+        navigationOptions: {
+          headerTitle: 'Calming Sounds'
         }
       }
     },

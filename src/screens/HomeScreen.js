@@ -25,6 +25,11 @@ export default function HomeScreen({navigation}) {
             onPress={() => navigation.navigate('Affirmations')}
             title="Daily affirmation"
           />
+          <OptionCard
+            source={require('../../images/cape.png')}
+            onPress={() => navigation.navigate('Sounds')}
+            title="Calming sounds"
+          />
         </View>
         <StatusBar
             style="auto" />
@@ -42,7 +47,7 @@ const styles = StyleSheet.create({
   title: {
     color: colours.purple,
     fontSize: 25,
-    marginVertical: 100,
+    marginVertical: 70,
     paddingHorizontal: 50
   },
   image: {
