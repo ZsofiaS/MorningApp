@@ -29,9 +29,9 @@ const styles = StyleSheet.create({
     marginVertical: 10
   },
   image: {
-    marginVertical: 10,
+    marginVertical: 5,
     marginHorizontal: 10,
-    width: 60,
-    height: 60,
+    width: 80,
+    height: 80,
   }
 });

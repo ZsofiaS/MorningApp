@@ -24,7 +24,7 @@ export default function BreathScreen() {
 const styles = StyleSheet.create({
   title: {
     color: colours.primaryColour,
-    fontSize: 20,
+    fontSize: 25,
     marginVertical: 60,
     marginHorizontal: 50,
     textAlign: 'center'
