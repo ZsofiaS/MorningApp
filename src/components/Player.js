@@ -10,7 +10,8 @@ export default class Player extends React.Component {
     super();
     this.state = {
       on: false,
-      playbackInstance: null
+      playbackInstance: null,
+      soundObject: {}
     };
   }
 
@@ -25,6 +26,7 @@ export default class Player extends React.Component {
         staysActiveInBackground: true,
         playThroughEarpieceAndroid: false
       });
+      this.loadAudio(uri);
     } catch(error) {
       console.log(error);
     }
@@ -36,20 +38,25 @@ export default class Player extends React.Component {
            Audio.Sound.createAsync(
              uri,
              { shouldPlay: true });
-        await soundObject.playAsync();
-      }
+      await soundObject.playAsync();
+      await this.setState({
+        soundObject: soundObject
+      })
+    }
     catch (error) {
       console.log(error);
     }
   }
 
-  playSound = (uri) => {
-    if (this.state.on) {
+  playStopSound = async (uri) => {
+    const { on, soundObject } = this.state;
+    if (on) {
+      await soundObject.pauseAsync();
       this.setState({
         on: false
       });
     } else {
-      this.loadAudio(uri);
+      await this.loadAudio(uri);
       this.setState({
         on: true
       })
@@ -78,7 +85,7 @@ export default class Player extends React.Component {
           titleStyle={{ color: colours.primaryColour, fontSize: 20}}
           buttonStyle={{ padding: 10}}
           type='clear'
-          onPress={() => this.playSound(this.props.uri)}
+          onPress={() => this.playStopSound(this.props.uri)}
         />
       </View>
     )
