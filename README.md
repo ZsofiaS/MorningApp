@@ -3,7 +3,7 @@ A morning ritual app to help taking back your mornings by developing good habits
 Take a minute to pause and reflect & stay positive 🌺
 
 ### Screens
-![home](./images/screenA.png)![timer](./images/screenB.png)![journal](./images/screenC.png)![affirmation](./images/screenD.png)
+![home](./images/screenA.png)![timer](./images/screenB.png)![journal](./images/screenC.png)![affirmation](./images/screenD.png)![sounds](./images/screenE.png)
 
 ### Tech stack
 * React Native
@@ -14,6 +14,7 @@ Take a minute to pause and reflect & stay positive 🌺
 * Gratitude Journal
 * Meditation/ break timer
 * Daily affirmation
+* Calming sounds (sounds not uploaded to github)
 
 ### How to use:
 
