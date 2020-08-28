@@ -105,12 +105,11 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     justifyContent: 'flex-start',
     marginVertical: 15,
-    marginHorizontal: 30
+    marginHorizontal: 35
   },
   description: {
     color: colours.primaryColour,
     fontSize: 20,
-    fontWeight: 'bold',
     marginHorizontal: 15
   },
   image: {

@@ -8,7 +8,7 @@ export default function SoundsScreen() {
     <View>
       <Text
         style={styles.title}>
-        Select one of the calming sounds
+        Select a calming sound
       </Text>
       <View
         style={styles.listContainer}
