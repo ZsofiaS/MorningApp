@@ -39,7 +39,7 @@ export default class Player extends React.Component {
              uri,
              { shouldPlay: true });
       await soundObject.playAsync();
-      await this.setState({
+      this.setState({
         soundObject: soundObject
       })
     }
@@ -59,6 +59,9 @@ export default class Player extends React.Component {
       await this.loadAudio(uri);
       this.setState({
         on: true
+      })
+      await this.setState({
+        on: false
       })
     }
   }

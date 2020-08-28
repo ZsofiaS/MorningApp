@@ -14,13 +14,14 @@ export default function SoundsScreen() {
         style={styles.listContainer}
       >
         <Player
-          source={require('../../images/forest.png')}
-          description='Meadow sounds'
-          uri={require('../../sounds/glass.wav')}        />
-        <Player
           source={require('../../images/lake.png')}
           description='Birdsong'
-          uri={require('../../sounds/birds.wav')}
+          uri={require('../../sounds/birds2.wav')}
+        />
+        <Player
+          source={require('../../images/lagoon-1.png')}
+          description='Summer night'
+          uri={require('../../sounds/summernight.mp3')}
         />
         <Player
           source={require('../../images/beach.png')}
