@@ -15,11 +15,12 @@ export default function SoundsScreen() {
       >
         <Player
           source={require('../../images/forest.png')}
-          description='Meadow (5:00)'
-        />
+          description='Meadow sounds'
+          uri={require('../../sounds/glass.wav')}        />
         <Player
           source={require('../../images/lake.png')}
-          description='Birds (3:00)'
+          description='Bird sounds'
+          uri={require('../../sounds/glass.wav')}
         />
       </View>
     </View>

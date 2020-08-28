@@ -3,12 +3,56 @@ import { Text, View, StyleSheet, Image } from 'react-native';
 import { Button } from 'react-native-elements';
 import colours from '../../constants/colours.js';
 import Icon from 'react-native-vector-icons/FontAwesome';
+import { Audio } from 'expo-av';
 
 export default class Player extends React.Component {
   constructor(props) {
     super();
     this.state = {
-      on: false
+      on: false,
+      playbackInstance: null
+    };
+  }
+
+  async componentDidMount() {
+    try {
+      await Audio.setAudioModeAsync({
+        allowsRecordingIOS: false,
+        interruptionModeIOS: Audio.INTERRUPTION_MODE_IOS_DO_NOT_MIX,
+        playsInSilentModeIOS: true,
+        interruptionModeAndroid: Audio.INTERRUPTION_MODE_ANDROID_DUCK_OTHERS,
+        shouldDuckAndroid: true,
+        staysActiveInBackground: true,
+        playThroughEarpieceAndroid: false
+      });
+    } catch(error) {
+      console.log(error);
+    }
+  }
+
+  async loadAudio(uri) {
+    try {
+      const { sound: soundObject, status } = await
+           Audio.Sound.createAsync(
+             uri,
+             { shouldPlay: true });
+        await soundObject.playAsync();
+      }
+    catch (error) {
+      console.log(error);
+    }
+  }
+
+  playSound = (uri) => {
+    if (this.state.on) {
+      this.setState({
+        on: false
+      });
+    } else {
+      this.loadAudio(uri);
+      this.setState({
+        on: true
+      })
     }
   }
 
@@ -34,18 +78,7 @@ export default class Player extends React.Component {
           titleStyle={{ color: colours.primaryColour, fontSize: 20}}
           buttonStyle={{ padding: 10}}
           type='clear'
-        />
-        <Button
-          icon={
-            <Icon
-              name='refresh'
-              color={colours.primaryColour}
-              size={25}
-            />
-          }
-          titleStyle={{ color: colours.primaryColour, fontSize: 20}}
-          buttonStyle={{ padding: 10}}
-          type='clear'
+          onPress={() => this.playSound(this.props.uri)}
         />
       </View>
     )
