@@ -38,4 +38,12 @@ expo start
 * add image upload feature to gratitude journal
 
 ### Credits
-affirmations.dev API
+* Affirmations from affirmations.dev API  
+* Lake & lagoon icons by IconPond
+* Beach, cape, branch icons by FreePik
+* Lotus icons by RoundIcons
+* Bird song by reinsamba
+(* Summer night sound by eric5335)
+* Crushing waves sound by Luftrum
+* Paddling sound by Danjocross
+* Summer night sound by Legend1060

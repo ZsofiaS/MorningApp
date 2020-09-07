@@ -26,7 +26,7 @@ export default function SoundsScreen() {
         <Player
           source={require('../../images/lagoon-1.png')}
           description='Summer night'
-          uri={require('../../sounds/summernight.mp3')}
+          uri={require('../../sounds/crickets.mp3')}
           isPlaying={isPlaying}
           setPlay={() => setIsPlaying(!isPlaying)}
         />
