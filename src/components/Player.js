@@ -55,14 +55,15 @@ export default class Player extends React.Component {
       this.setState({
         on: false
       });
-    } else {
+      this.props.setPlay();
+    } else if (!on && !this.props.isPlaying) {
       await this.loadAudio(uri);
       this.setState({
         on: true
-      })
-      await this.setState({
-        on: false
-      })
+      });
+      this.props.setPlay();
+    } else {
+      return;
     }
   }
 

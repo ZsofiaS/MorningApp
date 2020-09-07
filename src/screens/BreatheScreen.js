@@ -3,7 +3,7 @@ import { View, Text, StyleSheet, Image } from 'react-native';
 import Timer from '../components/Timer';
 import colours from '../../constants/colours.js';
 
-export default function BreathScreen() {
+export default function BreatheScreen() {
   return (
     <View>
       <Text

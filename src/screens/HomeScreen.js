@@ -12,8 +12,8 @@ export default function HomeScreen({navigation}) {
         <View style={styles.listContainer}>
           <OptionCard
             source={require('../../images/lotus-position-2.png')}
-            onPress={() => navigation.navigate('Breath')}
-            title="Take a break and breath"
+            onPress={() => navigation.navigate('Breathe')}
+            title="Take a break and breathe"
           />
           <OptionCard
             source={require('../../images/branch.png')}

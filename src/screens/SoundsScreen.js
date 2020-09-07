@@ -1,9 +1,12 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { View, Text, StyleSheet } from 'react-native';
 import Player from '../components/Player';
 import colours from '../../constants/colours.js';
 
 export default function SoundsScreen() {
+
+  const [isPlaying, setIsPlaying] = useState(false);
+
   return(
     <View>
       <Text
@@ -17,16 +20,22 @@ export default function SoundsScreen() {
           source={require('../../images/lake.png')}
           description='Birdsong'
           uri={require('../../sounds/birds2.wav')}
+          isPlaying={isPlaying}
+          setPlay={() => setIsPlaying(!isPlaying)}
         />
         <Player
           source={require('../../images/lagoon-1.png')}
           description='Summer night'
           uri={require('../../sounds/summernight.mp3')}
+          isPlaying={isPlaying}
+          setPlay={() => setIsPlaying(!isPlaying)}
         />
         <Player
           source={require('../../images/beach.png')}
           description='Crushing waves'
           uri={require('../../sounds/waves.wav')}
+          isPlaying={isPlaying}
+          setPlay={() => setIsPlaying(!isPlaying)}
         />
       </View>
     </View>
