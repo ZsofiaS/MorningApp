@@ -7,6 +7,7 @@
     "version": "1.0.0",
     "assetBundlePatterns": [
       "**/*"
-    ]
+    ],
+    "description": "A morning app to help take back your mornings.  \nTake a minute to pause, reflect & stay positive 🌺"
   }
 }
