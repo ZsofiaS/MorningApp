@@ -1,6 +1,6 @@
 # Morning App
-A morning ritual app to help taking back your mornings by developing good habits.  
-Take a minute to pause and reflect & stay positive 🌺
+A morning app to help take back your mornings.  
+Take a minute to pause, reflect & stay positive 🌺
 
 ### Screens
 ![home](./images/screenA.png)![timer](./images/screenB.png)![journal](./images/screenC.png)![affirmation](./images/screenD.png)![sounds](./images/screenE.png)
@@ -14,9 +14,15 @@ Take a minute to pause and reflect & stay positive 🌺
 * Gratitude Journal
 * Meditation/ break timer
 * Daily affirmation
-* Calming sounds (sounds not uploaded to github)
+* Calming sounds (sounds not on github)
 
-### How to use:
+### Check out the app on an Android phone
+
+* Install the Expo client app on your Android phone
+* Navigate [here](https://expo.io/@zsofias/MorningApp) to get the QR code for the app
+* Use the Expo app to scan the QR code to open the project
+
+### How to use locally:
 
 * Clone this repo and navigate to the local folder
 * Install all dependencies by typing in the terminal:
@@ -33,7 +39,7 @@ expo start
 
 ### Options to extend the app:
 
-* add new features: set your intentions, exercise, play relaxing audio
+* add new features: set your intentions, exercise
 * add backend to use additional APIs
 * add image upload feature to gratitude journal
 
@@ -43,7 +49,6 @@ expo start
 * Beach, cape, branch icons by FreePik
 * Lotus icons by RoundIcons
 * Bird song by reinsamba
-(* Summer night sound by eric5335)
 * Crushing waves sound by Luftrum
 * Paddling sound by Danjocross
 * Summer night sound by Legend1060
