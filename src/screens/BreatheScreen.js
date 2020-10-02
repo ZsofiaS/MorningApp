@@ -32,7 +32,7 @@ const styles = StyleSheet.create({
   imageContainer: {
     flex: 1,
     alignItems: 'center',
-    marginVertical: 15
+    marginVertical: 0
   },
   image: {
     width: 120,

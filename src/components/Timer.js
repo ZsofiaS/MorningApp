@@ -105,32 +105,15 @@ export default class Timer extends React.Component {
     return (
       <View
         style={styles.timerContainer}>
-        <Text
-          style={styles.timer}>
-          {this.state.mins}:{this.state.secs <= 9 ? `0${this.state.secs}` : this.state.secs}
-        </Text>
+        
         <View style={styles.buttonsContainer}>
-          <View style={styles.buttonContainer}>
-            <Button
-              icon={
-                <Icon
-                  name='minus'
-                  color={colours.primaryColour}
-                  size={30}
-                />
-              }
-              titleStyle={{ color: colours.primaryColour, fontSize: 20}}
-              buttonStyle={{ padding: 15}}
-              type='clear'
-              onPress={this.decrementMins} />
-          </View>
           <View style={styles.buttonContainer}>
             <Button
               icon={
                 <Icon
                   name={this.state.on ? 'pause' : 'play'}
                   color={colours.primaryColour}
-                  size={30}
+                  size={40}
                 />
               }
               titleStyle={{ color: colours.primaryColour, fontSize: 20}}
@@ -144,7 +127,7 @@ export default class Timer extends React.Component {
                 <Icon
                   name='refresh'
                   color={colours.primaryColour}
-                  size={30}
+                  size={40}
                 />
               }
               titleStyle={{ color: colours.primaryColour, fontSize: 20}}
@@ -158,7 +141,7 @@ export default class Timer extends React.Component {
                 <Icon
                   name='plus'
                   color={colours.primaryColour}
-                  size={30}
+                  size={40}
                 />
               }
               titleStyle={{ color: colours.primaryColour, fontSize: 20}}
@@ -166,7 +149,25 @@ export default class Timer extends React.Component {
               type='clear'
               onPress={this.incrementMins} />
           </View>
+          <View style={styles.buttonContainer}>
+            <Button
+              icon={
+                <Icon
+                  name='minus'
+                  color={colours.primaryColour}
+                  size={40}
+                />
+              }
+              titleStyle={{ color: colours.primaryColour, fontSize: 20}}
+              buttonStyle={{ padding: 15}}
+              type='clear'
+              onPress={this.decrementMins} />
+          </View>
         </View>
+        <Text
+          style={styles.timer}>
+          {this.state.mins}:{this.state.secs <= 9 ? `0${this.state.secs}` : this.state.secs}
+        </Text>
       </View>
     )
   }
@@ -174,11 +175,10 @@ export default class Timer extends React.Component {
 
 const styles = StyleSheet.create({
   timerContainer: {
-    marginVertical: 30,
+    marginVertical: 20,
   },
   timer: {
-    marginVertical: 120,
-    fontSize: 80,
+    fontSize: 90,
     textAlign: 'center',
     color: colours.primaryColour
   },
@@ -186,10 +186,10 @@ const styles = StyleSheet.create({
     flexDirection: 'row',
     justifyContent: 'center',
     alignItems: 'center',
-    marginVertical: -100
+    marginVertical: 130,
+    marginBottom: 0
   },
   buttonContainer: {
-    width: '15%',
     marginHorizontal: 10
   },
 })
