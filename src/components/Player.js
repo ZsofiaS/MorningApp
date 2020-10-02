@@ -37,7 +37,7 @@ export default class Player extends React.Component {
       const { sound: soundObject, status } = await
            Audio.Sound.createAsync(
              uri,
-             { shouldPlay: true });
+             { shouldPlay: true, isLooping: true });
       await soundObject.playAsync();
       this.setState({
         soundObject: soundObject
@@ -62,6 +62,11 @@ export default class Player extends React.Component {
         on: true
       });
       this.props.setPlay();
+      if (soundObject.didJustFinish) {
+        this.setState({
+          on: false
+        })
+      }
     } else {
       return;
     }
