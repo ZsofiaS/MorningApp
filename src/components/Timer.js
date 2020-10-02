@@ -175,7 +175,7 @@ export default class Timer extends React.Component {
 
 const styles = StyleSheet.create({
   timerContainer: {
-    marginVertical: 20,
+    marginVertical: 30,
   },
   timer: {
     fontSize: 90,

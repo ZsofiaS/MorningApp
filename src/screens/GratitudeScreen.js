@@ -109,7 +109,7 @@ const styles = StyleSheet.create({
   title: {
     color: colours.primaryColour,
     fontSize: 25,
-    marginVertical: 60,
+    marginVertical: 50,
     paddingHorizontal: 50,
     textAlign: 'center'
   },
