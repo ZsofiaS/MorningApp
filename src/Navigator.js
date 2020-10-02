@@ -1,4 +1,6 @@
 import React from 'react';
+import { Text, Image } from 'react-native';
+import { createBottomTabNavigator } from 'react-navigation-tabs';
 import {createStackNavigator} from 'react-navigation-stack';
 import {createAppContainer} from 'react-navigation';
 import HomeScreen from './screens/HomeScreen';
@@ -65,4 +67,57 @@ const Navigator = createStackNavigator(
     }
 );
 
-export default createAppContainer(Navigator);
+const BottomNavigator = createBottomTabNavigator({
+  Home: { screen: HomeScreen, navigationOptions: {
+    tabBarIcon: (tabInfo) => {
+      return (
+        <Image style={{ width: 25, height: 25 }} 
+             source={require('./../images/lake.png')} />
+      );
+      }
+    }
+  },
+  Breathe: { screen: BreatheScreen, navigationOptions: {
+    tabBarIcon: (tabInfo) => {
+      return (
+        <Image style={{ width: 25, height: 25 }} 
+             source={require('./../images/lotus-position-2.png')} />
+      );
+      }
+    }
+  },
+  Affirmations: { screen: AffirmationsScreen, navigationOptions: {
+    tabBarIcon: (tabInfo) => {
+      return (
+        <Image style={{ width: 25, height: 25 }} 
+             source={require('./../images/lotus.png')} />
+      );
+      }
+    }
+  },
+  Gratitude: { screen: GratitudeScreen, navigationOptions: {
+    tabBarIcon: (tabInfo) => {
+      return (
+        <Image style={{ width: 25, height: 25 }} 
+             source={require('./../images/branch.png')} />
+      );
+      }
+    }
+  },
+  Sounds: { screen: SoundsScreen, navigationOptions: {
+    tabBarIcon: (tabInfo) => {
+      return (
+        <Image style={{ width: 25, height: 25 }} 
+             source={require('./../images/cape.png')} />
+      );
+      }
+    }
+  },
+}, {
+  tabBarOptions: {
+    inactiveTintColor: colours.grey,
+    activeTintColor: colours.purple,
+  }
+});
+
+export default createAppContainer(BottomNavigator);
