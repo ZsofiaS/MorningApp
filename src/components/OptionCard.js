@@ -13,7 +13,8 @@ export default function OptionCard({source, onPress, title}) {
       <Button
         titleStyle={{
             color: colours.primaryColour,
-            fontSize: 20
+            fontSize: 20,
+            fontFamily: 'sourceSans'
           }}
         type='clear'
         title={title}

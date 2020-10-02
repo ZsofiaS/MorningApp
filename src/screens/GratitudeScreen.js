@@ -65,14 +65,14 @@ export default function GratitudeScreen() {
         numberOfLines={4}
         onChangeText = { value => setEntry(value)}
         value={entry}
-        style={{paddingHorizontal: 50, fontSize: 18}}
+        style={{paddingHorizontal: 50, fontSize: 18, fontFamily: 'sourceSans'}}
         inputContainerStyle={styles.input}
         placeholder="A good night's sleep? Sunny weather?"
       />
 
       <View style={styles.buttonContainer}>
         <Button
-          titleStyle={{ color: colours.primaryColour}}
+          titleStyle={{ color: colours.primaryColour, fontFamily: 'sourceSans'}}
           buttonStyle={{ padding: 15}}
           type='clear'
           title='Save journal entry'
@@ -111,7 +111,8 @@ const styles = StyleSheet.create({
     fontSize: 25,
     marginVertical: 50,
     paddingHorizontal: 50,
-    textAlign: 'center'
+    textAlign: 'center',
+    fontFamily: 'sourceSans'
   },
   imageContainer: {
     flex: 1,
@@ -124,7 +125,8 @@ const styles = StyleSheet.create({
   },
   entryTitle: {
     flexDirection: 'row',
-    justifyContent: 'space-between'
+    justifyContent: 'space-between',
+    fontFamily: 'sourceSans'
   },
   entryListContainer: {
     alignItems: 'flex-start'

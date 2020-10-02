@@ -180,7 +180,8 @@ const styles = StyleSheet.create({
   timer: {
     fontSize: 90,
     textAlign: 'center',
-    color: colours.primaryColour
+    color: colours.primaryColour,
+    fontFamily: 'sourceSans'
   },
   buttonsContainer: {
     flexDirection: 'row',

@@ -39,10 +39,11 @@ const styles = StyleSheet.create({
   content: {
     color: colours.primaryColour,
     fontSize: 25,
-    marginVertical: 120,
+    marginVertical: 110,
     paddingHorizontal: 50,
     textAlign: 'center',
-    lineHeight: 40
+    lineHeight: 40,
+    fontFamily: 'sourceSans'
   },
   imageContainer: {
     flex: 1,

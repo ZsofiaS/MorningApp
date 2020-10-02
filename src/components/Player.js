@@ -119,7 +119,8 @@ const styles = StyleSheet.create({
   description: {
     color: colours.primaryColour,
     fontSize: 20,
-    marginHorizontal: 15
+    marginHorizontal: 15,
+    fontFamily: 'sourceSans'
   },
   image: {
     width: 80,

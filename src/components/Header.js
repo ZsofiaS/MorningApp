@@ -21,7 +21,8 @@ header: {
     },
 headerTitle: {
     color: 'white',
-    fontSize: 18
+    fontSize: 18,
+    fontFamily: 'sourceSans'
 }
 })
 

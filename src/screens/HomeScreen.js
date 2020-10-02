@@ -42,12 +42,15 @@ const styles = StyleSheet.create({
     flex: 1,
     alignItems: 'center',
     justifyContent: 'flex-start',
+
   },
   title: {
     color: colours.purple,
     fontSize: 25,
     marginVertical: 50,
-    paddingHorizontal: 50
+    paddingHorizontal: 50,
+    fontFamily: 'sourceSans',
+    textAlign: 'center'
   },
   listContainer: {
     marginVertical: -15

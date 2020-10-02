@@ -84,9 +84,11 @@ const styles = StyleSheet.create({
     marginVertical: 10
   },
   entryContent: {
-    fontSize: 18
+    fontSize: 18,
+    fontFamily: 'sourceSans'
   },
   entryDate: {
-    paddingLeft: 10
+    paddingLeft: 10,
+    fontFamily: 'sourceSans'
   }
 });

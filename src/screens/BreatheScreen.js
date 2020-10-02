@@ -27,7 +27,8 @@ const styles = StyleSheet.create({
     fontSize: 25,
     marginVertical: 50,
     marginHorizontal: 50,
-    textAlign: 'center'
+    textAlign: 'center',
+    fontFamily: 'sourceSans'
   },
   imageContainer: {
     flex: 1,
