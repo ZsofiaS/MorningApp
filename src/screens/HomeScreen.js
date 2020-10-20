@@ -53,7 +53,7 @@ const styles = StyleSheet.create({
     textAlign: 'center'
   },
   listContainer: {
-    marginVertical: -15
+    marginVertical: -25
   },
   bContainer: {
     flexDirection: 'row',

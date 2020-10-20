@@ -26,7 +26,7 @@ export default class Player extends React.Component {
         staysActiveInBackground: true,
         playThroughEarpieceAndroid: false
       });
-      this.loadAudio(uri);
+      //this.loadAudio(uri);
     } catch(error) {
       console.log(error);
     }

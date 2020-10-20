@@ -1,5 +1,6 @@
 import React, { useEffect } from 'react';
 import { View, Text, StyleSheet, Image } from 'react-native';
+import { TouchableOpacity } from 'react-native-gesture-handler';
 import colours from '../../constants/colours.js';
 
 export default class AffirmationsScreen extends React.Component {
@@ -11,6 +12,10 @@ export default class AffirmationsScreen extends React.Component {
   }
 
   componentDidMount = () => {
+    this.fetchAffirmation();
+  }
+
+  fetchAffirmation = () => {
     fetch('https://www.affirmations.dev')
       .then(response => response.json())
       .then((responseJson) => {
@@ -24,12 +29,13 @@ export default class AffirmationsScreen extends React.Component {
     return (
       <View>
         <Text style={styles.content}>{this.state.affirmation == null ? '' : `"${this.state.affirmation}"`}</Text>
-        <View style={styles.imageContainer}>
+        <TouchableOpacity style={styles.imageContainer} onPress={() => this.fetchAffirmation()}>
           <Image
             style={styles.image}
             source={require('../../images/lotus.png')}
+            //onPress={this.fetchAffirmation}
           />
-        </View>
+        </TouchableOpacity>
       </View>
     )
   }
@@ -46,9 +52,10 @@ const styles = StyleSheet.create({
     fontFamily: 'sourceSans'
   },
   imageContainer: {
-    flex: 1,
+    //flex: 1,
     alignItems: 'center',
-    marginVertical: 0
+    marginVertical: 'auto'
+
   },
   image: {
     width: 120,
